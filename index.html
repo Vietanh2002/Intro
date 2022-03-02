@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction - Transition</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div id="main">
+    <h2 class="font-bigger mg-10">CSS Transition</h2>
+    <p class="mg-18">CSS Transition cho phép bạn thay đổi các giá trị thuộc tính một cách trơn tru, trong một khoảng thời gian nhất định.</p>
+    <p class="mg-18 font-medium">Di chuột qua phần tử bên dưới để xem hiệu ứng chuyển tiếp CSS:</p>
+    <div style="height: 90px">
+      <div class="animated_div">CSS</div>
+    </div>
+    <p class="mg-18">Trong phần này, chúng ta cùng tìm hiểu về các thuộc tính sau:</p>
+    <ul class="mg-15 pdl">
+      <li class="cl-red">trasition</li>
+      <li class="cl-red">trasition-delay</li>
+      <li class="cl-red">trasition-duration</li>
+      <li class="cl-red">trasition-property</li>
+      <li class="cl-red">trasition-timimg-function</li>
+    </ul>
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Các trình duyệt hỗ trợ cho trasition</h2>
+    <p class="mg-18">Các số trong bảng chỉ định phiên bản trình duyệt đầu tiên hỗ trợ đầy đủ thuộc tính.</p>
+    <img src="./assets/image/img1.jpg" alt="" style="width: 100%">
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Làm thế nào để sử dụng transition CSS?</h2>
+    <p class="mg-18">Để tạo hiệu ứng chuyển tiếp, bạn phải chỉ định hai điều:</p>
+    <ul class="mg-15 pdl-40">
+      <li>thuộc tính CSS mà bạn muốn thêm hiệu ứng vào</li>
+      <li>thời gian của hiệu ứng</li>
+    </ul>
+    <p class="mg-18">
+      <span class="font-medium">Lưu ý</span> : Nếu phần thời lượng không được chỉ định, quá trình chuyển đổi sẽ không có hiệu lực, vì giá trị mặc định là 0.
+    </p>
+    <p class="mg-18">Ví dụ sau đây cho thấy phần tử div màu đỏ 100px * 100px. Phần tử div cũng đã chỉ định hiệu ứng chuyển tiếp cho thuộc tính width, với thời lượng 2 giây:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            width
+            <span style="color:mediumblue">:   100px;</span>
+          </span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            height
+            <span style="color:mediumblue">:   100px;</span>
+          </span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            background
+            <span style="color:mediumblue">:   #4CD6ED;</span>
+          </span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition
+            <span style="color:mediumblue">:   width 2s;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+    </div>
+    <p class="mg-18">Hiệu ứng Transition sẽ bắt đầu khi thuộc tính CSS được chỉ định (chiều rộng) thay đổi giá trị.</p>
+    <p class="mg-18">Bây giờ, chúng ta hãy chỉ định một giá trị mới cho thuộc tính width khi người dùng di chuột qua phần tử div:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div:hover
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            width
+            <span style="color:mediumblue">:   300px;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+      <a href="http://127.0.0.1:5500/exam1.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Thay đổi một số giá trị thuộc tính</h2>
+    <p class="mg-18">Ví dụ sau thêm hiệu ứng chuyển tiếp cho cả thuộc tính width và height, với thời lượng 2 giây cho chiều rộng và 4 giây cho chiều cao:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition
+            <span style="color:mediumblue">: width 2s, height 4s;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+      <a href="http://127.0.0.1:5500/exam2.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Tốc độ của Transition</h2>
+    <p class="mg-18">Thuộc tính <span class="code_span">transition-timing-function</span> chỉ định đường cong tốc độ của hiệu ứng chuyển tiếp.</p>
+    <p class="mg-18">Thuộc tính chức năng thời gian chuyển tiếp có thể có các giá trị sau:</p>
+    <ul class="mg-15 pdl-40">
+      <li><span class="code_span">ease</span>- chỉ định hiệu ứng chuyển tiếp với bắt đầu chậm, sau đó nhanh, sau đó kết thúc chậm (đây là mặc định)</li>
+      <li><span class="code_span">linear</span>- chỉ định một hiệu ứng chuyển tiếp với cùng tốc độ từ đầu đến cuối</li>
+      <li><span class="code_span">ease-in</span>- chỉ định hiệu ứng chuyển tiếp với khởi động chậm</li>
+      <li><span class="code_span">ease-out</span>- chỉ định hiệu ứng chuyển tiếp với kết thúc chậm</li>
+      <li><span class="code_span">ease-in-out</span>- chỉ định hiệu ứng chuyển tiếp với bắt đầu và kết thúc chậm</li>
+      <li><span class="code_span">cubic-bezier(n,n,n,n)</span>- cho phép bạn xác định các giá trị của riêng mình trong một hàm bậc ba</li>
+    </ul>
+    <p class="mg-18">Ví dụ sau đây cho thấy một số đường cong tốc độ khác nhau có thể được sử dụng:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">#div1
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">: linear;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+        <br>
+        <span style="color: brown">#div2
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">: ease;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+        <br>
+        <span style="color: brown">#div3
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">: ease-in;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+        <br>
+        <span style="color: brown">#div4
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">: ease-out;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+        <br>
+        <span style="color: brown">#div5
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">: ease-in-out;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+        <br>
+        <span style="color: brown">#div6
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">: cubic-bezier(0.075, 0.82, 0.165, 1);</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+        <br>
+      </div>
+      <a href="http://127.0.0.1:5500/exam3.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Trì hoãn hiệu ứng Transition</h2>
+    <p class="mg-18">Thuộc tính <span class="code_span">transition-delay</span> chỉ định độ trễ (tính bằng giây) cho hiệu ứng chuyển tiếp.</p>
+    <p class="mg-18">Ví dụ sau có độ trễ 1 giây trước khi bắt đầu:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-delay
+            <span style="color:mediumblue">:   1s;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+      <a href="http://127.0.0.1:5500/exam4.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Transition + Transformation</h2>
+    <p class="mg-18">Ví dụ sau đây thêm hiệu ứng transition vào transformation:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition
+            <span style="color:mediumblue">:   width 2s, height 2s, transform 2s;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+      <a href="http://127.0.0.1:5500/exam5.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+    <hr class="hr">
+    <h2 class="font-bigger mg-10">Một số ví dụ khác về transition</h2>
+    <p class="mg-18">Các thuộc tính chuyển tiếp CSS có thể được chỉ định từng thuộc tính, như sau:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-property
+            <span style="color:mediumblue">:   width;</span>
+          </span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-duration
+            <span style="color:mediumblue">:   2s;</span>
+          </span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-timing-function
+            <span style="color:mediumblue">:   linear;</span>
+          </span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition-delay
+            <span style="color:mediumblue">:   1s;</span>
+          </span>
+          <br>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+      <a href="http://127.0.0.1:5500/exam6.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+    <p class="mg-18">hoặc bằng cách sử dụng thuộc tính viết tắt <span class="code_span">transition</span>:</p>
+    <div class="example">
+      <h3 class="mg-10 font-bigger">Ví dụ</h3>
+      <div class="code mg-16">
+        <span style="color: brown">div
+          <span style="color:#000">{</span>
+          <br>
+          <span style="color:red" class="pdl-20">
+            transition
+            <span style="color:mediumblue">:   width 2s linear 1s;</span>
+          </span>
+          <span style="color:#000">}</span>
+        </span>
+      </div>
+      <a href="http://127.0.0.1:5500/exam7.html" class="btn mg-16" target="_blank" style="text-decoration: none">Hãy cùng mình thử nhá ^.^</a>
+    </div>
+  </div>
+</body>
+</html>
